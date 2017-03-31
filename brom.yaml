@@ -67,7 +67,7 @@ instances:
 #      bctype_bottom_B_C_DIC: 1
 #      bc_bottom_B_C_DIC: 2850.
       bctype_bottom_B_C_DIC: 1
-      bc_bottom_B_C_DIC: 10023. #
+      bc_bottom_B_C_DIC: 10000. #
 
 #      bctype_bottom_B_NUT_NH4: 1
 #      bc_bottom_B_NUT_NH4: 10.
