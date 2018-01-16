@@ -303,7 +303,7 @@ instances:
     long_name: iron
     model: niva/brom_fe
     initialization:
-      Fe2:     0.0
+      Fe2:     0.30
       Fe3:     0.0
       FeS:     0.0
       FeCO3:   0.0
@@ -330,13 +330,13 @@ instances:
         # Rate of accel. sink. of part. with settled metal hydroxides
       K_fe_ox1: 0.5 # (1/d)
         # Specific rate of oxidation of Fe2 to Fe3  with O2:  1.e9 (M/yr) (Boudrau, 1996)
-      K_fe_ox2: 0.001 # (1/d)
+      K_fe_ox2: 0.005 #0.001 # (1/d)
         # Specific rate of oxidation of Fe2 to Fe3  with MnO2 and Mn(III):
       K_fe_rd: 0.5 # (1/d)
         # Specific rate of reduction of Fe3 to Fe2  with H2S:
       K_fes: 2510. # (uM)
         # FeS equilibrium constant: 2.51e-6 mol/cm3  (Katsev, 2006)
-      K_fes_form: 5.e-4 # (1/d)
+      K_fes_form: 1.e-3 #5.e-4 # (1/d)
         # Specific rate of precipitation of FeS from Fe2 with H2S: 4.e-5 (mol/g/yr)  (Katsev, 2006)
       K_fes_diss: 2.7e-6 # (1/d)
         # Specific rate of dissollution of FeS to Fe2 and H2S: 1.e-3 (1/yr) (Katsev, 2006)
@@ -389,7 +389,7 @@ instances:
     long_name: manganese
     model: niva/brom_manganese
     initialization:
-      Mn2:    0.0
+      Mn2:    1.0
       Mn3:    0.0
       Mn4:    0.0
       MnS:    0.0
@@ -475,74 +475,74 @@ instances:
         # Si_part transformation into minerals not modeled here (1/d) (DeMaster, 2003)
       Si_diss_max: 800.
         # Max conc. of diss Si for precipitation (mmol/m**3) (Strakhov, 1978)
-#----------------------------------------------------------------------
-  B_Ba:
-#----------------------------------------------------------------------
-    long_name: barium
-    model: niva/brom_ba
-    initialization:
-      Ba: 0.0
-      BaSO4: 0.001
-    coupling:
-      SO4: B_S/SO4
-    parameters:
-      Wsed: 5.0 # Rate of sinking of detritus (m/d)
-        # Sinking (Gregoire, Lacroix, 2001)
-#----------------------------------------------------------------------
-  B_Ni:
-#----------------------------------------------------------------------
-    long_name: nickel
-    model: niva/brom_ni
-    initialization:
-      Ni: 0.0
-      NiS: 0.0
-      Ni_POM: 0.0
-      Ni_DOM: 0.0
-      Ni_biota: 0.0
-    coupling:
-      H2S: B_S/H2S
-      Mn4: B_Mn/Mn4
-      FeS: B_Fe/FeS
-      FeS2: B_Fe/FeS2
-    parameters:
-      K_NiS: 2510.
-        # Solubility Product Constant,   default=2510.0_rk
-      K_NiS_form: 5.e-5 
-        # Specific rate of precipitation of NiS from Ni with H2S',   default=5.e-5_rk
-      K_NiS_diss: 1.e-6 
-        # Specific rate of dissollution of NiS to Ni and H2S',   default=1.e-6_rk
-      r_mn4_ni: 80.
-        # Mn4[uM]/Ni[uM] partitioning coeff. for Mn4 (REF)
-      r_fes_ni: 833.    
-        # FeS[uM]/Ni[uM] partitioning coeff. for FeS (REF)
-      r_fes2_ni: 600.
-        # FeS2[uM]/Ni[uM] partitioning coeff. for FeS2 (REF)
-      Wsed: 5.0 
-        #! Rate of sinking of detritus (m/d), =0.4 (Savchuk, 2002), 
-        # =5. (Gregoire, Lacroix, 2001), =1-370 (Alldredge, Gotschalk, 1988)
-      Wphy: 0.2
-        #! Rate of sinking of Phy (m/d), =0.1-0.5 (Savchuk, 2002)
-      Wm: 10.0
-        #  Rate of accel. sink. of metal  (m/d)
-#----------------------------------------------------------------------
-  B_PART:
-#----------------------------------------------------------------------
-    long_name: partitioning
-    model: niva/brom_partitioning
-    coupling:
-      Subst_biota: B_Ni/Ni_biota 
-      Subst_POM: B_Ni/Ni_POM
-      Subst_DOM: B_Ni/Ni_DOM
-      Subst_dis: B_Ni/Ni
-      Subst_miner: B_Ni/Ni
-      Baae:   B_BACT/Baae
-      Bhae:   B_BACT/Bhae
-      Baan:   B_BACT/Baan
-      Bhan:   B_BACT/Bhan
-      DON:      B_BIO/DON
-      PON:      B_BIO/PON
-      Phy:      B_BIO/Phy
-      Het:      B_BIO/Het
+##----------------------------------------------------------------------
+#  B_Ba:
+##----------------------------------------------------------------------
+#    long_name: barium
+#    model: niva/brom_ba
+#    initialization:
+#      Ba: 0.0
+#      BaSO4: 0.001
+#    coupling:
+#      SO4: B_S/SO4
+#    parameters:
+#      Wsed: 5.0 # Rate of sinking of detritus (m/d)
+#        # Sinking (Gregoire, Lacroix, 2001)
+##----------------------------------------------------------------------
+#  B_Ni:
+##----------------------------------------------------------------------
+#    long_name: nickel
+#    model: niva/brom_ni
+#    initialization:
+#      Ni: 0.0
+#      NiS: 0.0
+#      Ni_POM: 0.0
+#      Ni_DOM: 0.0
+#      Ni_biota: 0.0
+#    coupling:
+#      H2S: B_S/H2S
+#      Mn4: B_Mn/Mn4
+#      FeS: B_Fe/FeS
+#      FeS2: B_Fe/FeS2
+#    parameters:
+#      K_NiS: 2510.
+#        # Solubility Product Constant,   default=2510.0_rk
+#      K_NiS_form: 5.e-5 
+#        # Specific rate of precipitation of NiS from Ni with H2S',   default=5.e-5_rk
+#      K_NiS_diss: 1.e-6 
+#        # Specific rate of dissollution of NiS to Ni and H2S',   default=1.e-6_rk
+#      r_mn4_ni: 80.
+#        # Mn4[uM]/Ni[uM] partitioning coeff. for Mn4 (REF)
+#      r_fes_ni: 833.    
+#        # FeS[uM]/Ni[uM] partitioning coeff. for FeS (REF)
+#      r_fes2_ni: 600.
+#        # FeS2[uM]/Ni[uM] partitioning coeff. for FeS2 (REF)
+#      Wsed: 5.0 
+#        #! Rate of sinking of detritus (m/d), =0.4 (Savchuk, 2002), 
+#        # =5. (Gregoire, Lacroix, 2001), =1-370 (Alldredge, Gotschalk, 1988)
+#      Wphy: 0.2
+#        #! Rate of sinking of Phy (m/d), =0.1-0.5 (Savchuk, 2002)
+#      Wm: 10.0
+#        #  Rate of accel. sink. of metal  (m/d)
+##----------------------------------------------------------------------
+#  B_PART:
+##----------------------------------------------------------------------
+#    long_name: partitioning
+#    model: niva/brom_partitioning
+#    coupling:
+#      Subst_biota: B_Ni/Ni_biota 
+#      Subst_POM: B_Ni/Ni_POM
+#      Subst_DOM: B_Ni/Ni_DOM
+#      Subst_dis: B_Ni/Ni
+#      Subst_miner: B_Ni/Ni
+#      Baae:   B_BACT/Baae
+#      Bhae:   B_BACT/Bhae
+#      Baan:   B_BACT/Baan
+#      Bhan:   B_BACT/Bhan
+#      DON:      B_BIO/DON
+#      PON:      B_BIO/PON
+#      Phy:      B_BIO/Phy
+#      Het:      B_BIO/Het
 #----------------------------------------------------------------------
   B_Hg:
 #----------------------------------------------------------------------
@@ -550,18 +550,23 @@ instances:
     model: niva/brom_hg
     initialization:
       Hg0: 0.0
-      Hg2: 0.0
+      Hg2: 0.0000
       MeHg: 0.0
       HgS: 0.0
       Hg2_biota: 0.0
       Hg2_POM: 0.0
       Hg2_DOM: 0.0
+      Hg2_Fe3: 0.0
+      Hg2_free: 0.0
       MeHg_biota: 0.0
       MeHg_POM: 0.0
       MeHg_DOM: 0.0
+      MeHg_Fe3: 0.0
+      MeHg_free: 0.0
     coupling:
       O2:    B_BIO/O2
       H2S:   B_S/H2S
+      SO4:   B_S/SO4
       Baae:   B_BACT/Baae
       Bhae:   B_BACT/Bhae
       Baan:   B_BACT/Baan
@@ -570,31 +575,33 @@ instances:
       PON:      B_BIO/PON
       Phy:      B_BIO/Phy
       Het:      B_BIO/Het
-      Fe2:      B_Fe/Fe2
       Fe3:      B_Fe/Fe3
-      H2S:      B_S/H2S
       Mn4:      B_Mn/Mn4
+      Hplus:    B_pH/Hplus
     parameters:
-#---- Hg--------!
-      K_hg0_irr_ox: 5.9       #! photo-oxidation of hg0    
-      K_hg0_hg2: 1.44          #! Coef. of dark oxidation of Hg0  (Knightes, 2008)
-      K_hg2_irr_red: 1.      #! photo-reduction of Hg2    
-      K_hg2_hg0: 0.03         #! Coef. biotic reduction of Hg2  (Knightes, 2008)
-      K_hg2_mehg: 1. #0.5 #0.1 #0.01        #! Coef. of mercury methilation  (Knightes, 2008)
-      K_mehg_irr_degr: 0.002     #! photo-degradation of MeHg 
-      K_mehg_hg2: 0.011 #0.11        #! Coef. of demethylation of MeHg  (Knightes, 2008)
-      K_hgs_form: 1.e-8 #1.e-6          #! Formation of HgS 
-      K_hgs_ox: 1.e-4            #! Oxidation of HgS 
-      K_hgs_diss: 1.e-13          #! Dissolution of HgS (Waples et al., GCA, 2005)
-      K_hgs: 0.000001 #1.               #! solubility product
-      r_mn4_hg2: 100.
-        # Mn4[uM]/Hg2[uM] partitioning coeff. for Mn4 (REF!!!)
-      r_fe3_hg2: 100.    
-        # Fe3[uM]/Hg2[uM] partitioning coeff. for Fe3 (REF!!!)
-      r_mn4_mehg: 100.
-        # Mn4[uM]/MeHg[uM] partitioning coeff. for Mn4 (REF!!!)
-      r_fe3_mehg: 100.    
-        # Fe3[uM]/MeHg[uM] partitioning coeff. for Fe3 (REF!!!)
+      K_hg0_irr_ox: 5.9         #! photo-oxidation of hg0: 5.9 d-1 per Em2d-1 (Knightes, 2008)  
+      K_hg0_hg2: 1.44           #! Coef. of dark oxidation of Hg0: 1.44 d-1 (Knightes, 2008)
+      K_hg2_irr_red: 0.05        #! photo-reduction of Hg2: 2.8 d-1 per Em2d-1 (Knightes, 2008)     
+      K_hg2_hg0: 0.005          #! Coef. biotic reduction of Hg2: 0.03 d-1 (Knightes, 2008)
+      K_hg2_mehg: 0.8 #0.35            #! Coef. of mercury methylation: 0.014 d-1 (Knightes, 2008)
+      K_mehg_irr_degr: 0.002    #! photo-degradation of MeHg: 0.002 d-1  (Knightes, 2008)
+      K_mehg_hg2: 0.5          #! Coef. of demethylation of MeHg: in water 0.0001, in sed 0.46 d-1 (Knightes, 2008)
+      K_mehg_h2s: 0.01 #1.e-5         #! Reduction of MeHg with H2S
+      K_hgs_form: 1.e-8 #! Formation of HgS 
+      K_hgs_ox: 1.e-6 #1.e-8           #! Oxidation of HgS 
+      K_hgs_diss: 1.e-13        #! Dissolution of HgS 1.e-13 (Waples et al., GCA, 2005)
+      K_hgs: 1e-6               #! 1x10-54 M2 (internet)
+      KHg2_Fe3: 100000          #!partitioning coef Hg2 on Fe3 
+      KMeHg_Fe3: 100000         #!partitioning coef MeHg on Fe3
+      Sad_Fe3: 0.001            #!sorption sites on Fe3 0.01 Katsev, 2006
+      Kow_bio_Hg2: 100000.      #!partitioning koeff. for biota for Hg2 200000(Alison, Alison, 2005)
+      Kow_pom_Hg2: 100000.      #!partitioning koeff. for POM for Hg2 200000(Alison, Alison, 2005)
+      Kow_dom_Hg2: 100000.      #!partitioning koeff. for DOM for Hg2 250000(Alison, Alison, 2005)
+      Kow_bio_MeHg: 100000.     #!partitioning koeff. for biota for MeHg 80000(Alison, Alison, 2005)
+      Kow_pom_MeHg: 100000.     #!partitioning koeff. for POM for MeHg 80000(Alison, Alison, 2005)
+      Kow_dom_MeHg: 100000.     #!partitioning koeff. for DOM for MeHg 150000(Alison, Alison, 2005)
+      K_relax: 1.             #! relaxation koeff.  for partitioning and adsorption
+      Wm: 10.0                  # (m/d) Rate of accel. sink. of part. 
 #----------------------------------------------------------------------
 # REFERENCES:
 #  Alldredge, A.L. and Gotschalk, C., 1988. In situ settling behavior of marine snow. Limnology and Oceanography, 33(3), pp.339-351.

@@ -247,13 +247,13 @@ instances:
 # Densities are specified by rho_<full variable name> and in same units as the model concentration
 # Any missing values will use the default density rho_def
       rho_def:   3.0E7                     # Default density of solid particles [mmol/m3]
-      rho_B_BIO_Phy: 1.5E7         # Density of (living) phytoplankton [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)
-      rho_B_BIO_PON: 1.5E7         # Density of (dead) particulate organic matter [mmolN/m3] (default = 1.4E6 mmolN/m3, from: 1.23 g WW/cm3 (Alldredge, Gotschalk, 1988), mg DW/mg WW=0.18 and mg DW /mg C=2 (Link et al.,2006))
-      rho_B_BIO_Het: 1.5E7         # Density of (living) non-bacterial heterotrophs [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)  
-      rho_B_BACT_Baae: 1.5E7      # Density of (living) aerobic autotrophic bacteria [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)
-      rho_B_BACT_Bhae: 1.5E7      # Density of (living) aerobic heterotrophic bacteria [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)
-      rho_B_BACT_Baan: 1.5E7      # Density of (living) anaerobic autotrophic bacteria [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)
-      rho_B_BACT_Bhan: 1.5E7      # Density of (living) anaerobic heterotrophic bacteria [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)
+      rho_B_BIO_Phy: 1.4E6         # Density of (living) phytoplankton [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)
+      rho_B_BIO_PON: 1.4E6         # Density of (dead) particulate organic matter [mmolN/m3] (default = 1.4E6 mmolN/m3, from: 1.23 g WW/cm3 (Alldredge, Gotschalk, 1988), mg DW/mg WW=0.18 and mg DW /mg C=2 (Link et al.,2006))
+      rho_B_BIO_Het: 1.4E6         # Density of (living) non-bacterial heterotrophs [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)  
+      rho_B_BACT_Baae: 1.4E6      # Density of (living) aerobic autotrophic bacteria [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)
+      rho_B_BACT_Bhae: 1.4E6      # Density of (living) aerobic heterotrophic bacteria [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)
+      rho_B_BACT_Baan: 1.4E6      # Density of (living) anaerobic autotrophic bacteria [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)
+      rho_B_BACT_Bhan: 1.4E6u      # Density of (living) anaerobic heterotrophic bacteria [mmolN/m3] (default = 1.4E6 mmolN/m3 from PON default)
       rho_B_Ca_CaCO3: 2.80E7    # Density of calcium carbonate [mmolCa/m3] (default = 2.80E7 mmolCa/m3)
       rho_B_Fe_Fe3: 3.27E7      # Density of Fe3 [mmolFe/m3] (default = 3.27E7 mmolFe/m3)
       rho_B_Fe_FeCO3: 2.93E7    # Density of FeCO3 [mmolFe/m3] (default = 2.93E7 mmolFe/m3)
@@ -265,6 +265,7 @@ instances:
       rho_B_S_S0: 6.56E7       # Density of S0 [mmolS/m3] (default = 6.56E7 mmolS/m3)
       rho_B_Si_Sipart: 4.40E7   # Density of particulate silicate [mmolSi/m3] (default = 4.40E7 mmolSi/m3)
       rho_B_Ba_BaSO4: 4.17E7     # Density of BaSO4 [mmolBa/m3] (default = 4.17E7 mmolFe/m3) - MUST BE CHECKED !!!!!!
+      rho_B_Hg_HgS: 4.17E7     # Density of BaSO4 [mmolBa/m3] (default = 4.17E7 mmolFe/m3) - MUST BE CHECKED !!!!!!
 #
 #
 ##---Time stepping parameters----------------------------------------------------------------------
@@ -273,7 +274,7 @@ instances:
       freq_sed:    1           # Sinking / bhc frequency (default = 1)
       year:        2013        # Selected year (for reading netCDF inputs)
       days_in_yr:  365         # Number of days in repeated period (typically 365 or 366, default = 365)
-      last_day:    3650 #7300 #       # Last day in simulation (~ days_in_yr * no. repeated years, default = 365)
+      last_day:    14600 #3650  # Last day in simulation (~ days_in_yr * no. repeated years, default = 365)
       cc0:         0.0         # Resilient (minimum) concentration for all variables [mmol/m3] (default = 1.0E-11 mmol/m3)
 #
 #
